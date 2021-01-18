@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Browser {
 	public static WebDriver driver;
-
+	
 	public Browser(WebDriver driver) {
 		Browser.driver = driver;
 	}
@@ -26,5 +26,4 @@ public class Browser {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
-
 }
