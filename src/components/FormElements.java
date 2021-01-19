@@ -45,6 +45,18 @@ public class FormElements {
 		return this.driver.findElement(By.id(FormSelectors.addressTxt));
 	}
 	
+	public WebElement getMaleGender() {
+		return this.driver.findElement(By.xpath(FormSelectors.maleRdBtn));
+	}
+	
+	public WebElement getFemaleGender() {
+		return this.driver.findElement(By.xpath(FormSelectors.femaleRdBtn));
+	}
+	
+	public WebElement getOtherGender() {
+		return this.driver.findElement(By.xpath(FormSelectors.otherRdBtn));
+	}
+	
 	// Sets the details in elements
 	public void setFirstName(String eleTxt) {
 		WebElement firstName = getFirstName();
@@ -69,5 +81,19 @@ public class FormElements {
 	public void setAddress(String eleTxt) {
 		WebElement address = getAddress();
 		setElements.setTextBox(address, eleTxt);
+	}
+	
+	public void setGender(Enums.Gender value) {
+		WebElement male = getMaleGender();
+		WebElement female = getFemaleGender();
+		WebElement other = getOtherGender();
+		
+		if(value == Enums.Gender.MALE) {
+			setElements.selectRadioButton(male);
+		} else if(value == Enums.Gender.FEMALE) {
+			setElements.selectRadioButton(female);
+		} else {
+			setElements.selectRadioButton(other);
+		}
 	}
 }

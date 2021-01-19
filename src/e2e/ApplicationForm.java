@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 
 import components.Browser;
+import components.Enums;
 import components.FormElements;
 import constants.ConstStrings;
 
@@ -29,6 +30,7 @@ public class ApplicationForm {
 		form.setEmail("maitrimer@gmail.com");
 		form.setMobile("0123456789");
 		form.setAddress("Pune");
+		form.setGender(Enums.Gender.FEMALE);
 		
 		// Closes the browser
 		driver.close();
